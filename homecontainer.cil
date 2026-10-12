@@ -1,0 +1,11 @@
+; SELinux container domain with read/write access to ordinary home files (user_home_t).
+; Sensitive home types (ssh_home_t, gpg_secret_t, home_cert_t, ...) remain inaccessible.
+; Use in a quadlet with: SecurityLabelType=homecontainer.process
+(block homecontainer
+    (blockinherit container)
+    (allow process home_root_t (dir (getattr search open read)))
+    (allow process user_home_dir_t (dir (getattr search open read)))
+    (allow process user_home_t (dir (add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write)))
+    (allow process user_home_t (file (append create getattr ioctl lock map open read rename setattr unlink write)))
+    (allow process user_home_t (lnk_file (create getattr read rename unlink)))
+)
