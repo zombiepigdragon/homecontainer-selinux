@@ -3,6 +3,7 @@
 ; Use in a quadlet with: SecurityLabelType=homecontainer.process
 (block homecontainer
     (blockinherit container)
+    (typeattributeset container_net_domain (process))
     (allow process home_root_t (dir (getattr search open read)))
     (allow process user_home_dir_t (dir (getattr search open read)))
     (allow process user_home_t (dir (add_name create getattr ioctl lock open read remove_name rename reparent rmdir search setattr write)))

@@ -3,7 +3,7 @@
 
 Name:           homecontainer-selinux
 Version:        1.0
-Release:        2
+Release:        3
 Summary:        SELinux domain for containers that need access to user home files
 License:        MIT
 URL:            https://github.com/zombiepigdragon/homecontainer-selinux
@@ -43,6 +43,8 @@ fi
 %{_datadir}/selinux/packages/%{selinuxtype}/%{modulename}.cil
 
 %changelog
+* Mon Oct 12 2026 Alex Rawson <ajzecrom@gmail.com> - 1.0-3
+- Allow homecontainer.process to access network
 * Mon Oct 12 2026 Alex Rawson <ajzecrom@gmail.com> - 1.0-2
 - Fix scriptlet argument handling
 * Mon Oct 12 2026 Alex Rawson <ajzecrom@gmail.com> - 1.0-1
