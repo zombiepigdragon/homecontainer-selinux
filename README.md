@@ -10,14 +10,7 @@ container rules and adds read/write access to ordinary home files
 Download the RPM from the latest release and install it:
 
 ```
-sudo dnf install https://github.com/<owner>/homecontainer-selinux/releases/download/v1.0/homecontainer-selinux-1.0-1.noarch.rpm
-```
-
-If you previously loaded the modules by hand with `semodule -i` (priority 400),
-remove those first so they don't shadow the packaged copy (priority 200):
-
-```
-sudo semodule -X 400 -r homecontainer base_container
+sudo dnf install https://github.com/zombiepigdragon/homecontainer-selinux/releases/download/v1.0/homecontainer-selinux-1.0-1.noarch.rpm
 ```
 
 ## Use in a quadlet
